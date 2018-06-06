@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	
+    <TextView android:id="@+id/status_line"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/darkgray"
+              android:textColor="@color/actionbar_text"
+              android:text=" ===  NO DATA  === ">
+    </TextView>
+    
+    <!--  List View -->
+    <ListView android:id="@id/list"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#0000FF" >
+    </ListView>
+        
+ <!--
+        android:id="@+id/main_window_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="384dp"
+        android:background="#0000FF"
+        android:padding="@dimen/activity_horizontal_margin" >
+    </ListView>
+ -->  
+</FrameLayout> 

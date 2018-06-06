@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent">
+
+	<TextView
+		android:id="@+id/selectFeed"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_centerHorizontal="true"
+		android:layout_marginTop="40dp"
+		android:text="@string/feedSource"
+		android:textSize="24sp"
+		android:textStyle="bold"/>
+
+	<RadioGroup
+		android:id="@+id/feedSelection"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignLeft="@+id/selectFeed"
+		android:layout_alignRight="@+id/idDone"
+		android:layout_below="@+id/selectFeed"
+		android:orientation="vertical">
+
+		<RadioButton
+			android:id="@+id/choice1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/bolist"
+			android:textSize="16sp"/>
+
+		<RadioButton
+			android:id="@+id/choice2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/nylist"
+			android:textSize="16sp"/>
+
+		<RadioButton
+			android:id="@+id/choice3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/sflist"
+			android:textSize="16sp"/>
+	</RadioGroup>
+
+	<Button
+		android:id="@+id/idDone"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginBottom="22dp"
+		android:layout_marginRight="24dp"
+		android:text="Done"/>
+
+
+</RelativeLayout>

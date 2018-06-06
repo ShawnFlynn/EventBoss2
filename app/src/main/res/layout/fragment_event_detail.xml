@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/details_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    tools:context=".EventDetailFragment" >
+
+  	<TextView
+       android:id="@+id/titleText"
+       style="?android:attr/textAppearanceMedium"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:padding="16dp"
+       android:textIsSelectable="true" />
+   
+    <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" 
+      android:layout_below="@id/titleText" >
+    
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+	
+	  <TextView
+	    android:id="@+id/startText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	/>
+	  <TextView
+	    android:id="@+id/endText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+        android:layout_below="@id/startText" 
+    	/>
+	  <TextView
+	    android:id="@+id/typeText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+      	android:layout_below="@id/endText" 
+    	/>
+	  <TextView
+	    android:id="@+id/linkText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:autoLink="web"
+      	android:layout_below="@id/typeText" 
+    	/>
+	  <TextView
+	    android:id="@+id/organizerText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+      	android:layout_below="@id/linkText" 
+    	/>
+	  <TextView
+	    android:id="@+id/locationText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:autoLink="map"
+       	android:layout_below="@id/organizerText" 
+    	/>
+	  <TextView
+	    android:id="@+id/descriptionText"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+       	android:layout_below="@id/locationText" 
+    	/>
+<!-- 
+	  <RelativeLayout
+	    	android:background="?android:attr/dividerVertical"
+	    	android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+      		android:layout_below="@id/descriptionText" 	    	
+      		android:orientation="horizontal"  >
+	 
+			<Button
+		    	android:background="?android:attr/selectableItemBackground"
+		    	android:id="@+id/forward"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:layout_gravity="bottom|left"
+		    	android:layout_marginLeft="10dp"
+                android:text="@string/forward" />
+	
+			<Button
+		    	android:id="@+id/addtocalendar"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:layout_gravity="right"
+		    	android:layout_alignParentRight="true"
+		    	android:layout_marginRight="10dp"
+		    	android:background="?android:attr/selectableItemBackground"
+		    	android:text="@string/addToCalendar" />	
+		</RelativeLayout>
+ -->	
+    </RelativeLayout>
+    
+    </ScrollView>	       
+    
+</RelativeLayout>

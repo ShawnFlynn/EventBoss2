@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/main_app_screen"
+	android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+	android:orientation="vertical"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+	
+<!-- 
+	<RelativeLayout android:id="@+id/actionbar"
+      android:layout_alignParentTop="true"
+      android:layout_width="fill_parent" 
+      android:layout_height="wrap_content"
+      android:paddingLeft="6dip"
+      android:paddingRight="6dip"
+      android:paddingBottom="6dip"
+      android:paddingTop="10dip" 
+      android:layout_marginTop="2dip"
+      android:layout_marginBottom="2dip"
+      android:background="@color/darkblue"
+      android:layout_gravity="center_horizontal"
+      android:clickable="false" >
+		
+		<ImageView android:id="@+id/eventboss"
+			android:src="@drawable/eventboss"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerVertical="true"
+			android:clickable="false"
+			></ImageView>
+			
+		<TextView android:id="@+id/list_label"
+      android:text="@string/list_label"
+      android:textSize="15dip"
+      android:typeface="serif"
+			android:src="@drawable/currentevents"
+			android:layout_below="@id/eventboss"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:clickable="false"
+      android:textColor="@color/actionbar_text"
+			>
+		</TextView>
+			
+		<LinearLayout android:id="@+id/searchlayout"
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:clickable="true"
+			android:onClick="@string/search_handler"
+			android:layout_marginRight="6dip"
+			android:layout_marginLeft="6dip"
+			android:layout_marginBottom="18dip"
+			android:layout_alignTop="@id/eventboss"
+			>
+			<ImageView android:id="@+id/searchbtn"
+  				android:src="@drawable/ic_search"
+  				android:layout_width="wrap_content"
+  				android:layout_height="wrap_content"
+  				android:layout_alignParentRight="true"
+  				android:clickable="false"
+   			></ImageView>
+  			<TextView android:id="@+id/searchbtn_label"
+  				android:text="@string/search"
+  				android:textSize="10dip"
+  				android:layout_width="wrap_content"
+  				android:layout_height="wrap_content"
+  				android:layout_below="@id/searchbtn"
+  				android:layout_margin="4dip"
+          android:textColor="@color/actionbar_text"
+          android:clickable="false"
+  			></TextView>
+  		</LinearLayout>
+  		
+  		<LinearLayout android:id="@+id/changeviewlayout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/searchlayout"
+        android:clickable="true"
+		android:soundEffectsEnabled="true"
+		android:onClick="@string/change_view_handler"
+  			>
+	   		<ImageView android:id="@+id/changeviewbtn"
+	  			android:src="@drawable/ic_change_view"
+	  			android:layout_width="wrap_content"
+	  			android:layout_height="wrap_content"
+	  			android:clickable="false"
+	  			android:focusable="false"
+	  			>
+        </ImageView>
+        <TextView android:id="@+id/changeview_label"
+          android:text="@string/change_view"
+          android:textSize="10dip"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="4dip"
+          android:textColor="@color/actionbar_text"
+          android:clickable="false"
+          android:focusable="false" >
+        </TextView>
+		</LinearLayout>
+	</RelativeLayout>
+-->
+    <TextView android:id="@+id/status_line"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/darkgray"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:textColor="@color/actionbar_text"
+              android:text="this is on the\n very bottom!!!">
+    </TextView>
+
+    <!--  List View -->
+    <ListView android:id="@+id/main_window_listview" 
+              android:layout_below="@id/actionbar"
+              android:layout_above="@id/status_line"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#0000FF"
+		>
+    </ListView>
+    
+    <TextView android:id="@+id/no_data"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#cc0000"
+                android:background="@color/white"
+                android:layout_gravity="fill_vertical"
+                android:layout_below="@id/actionbar"
+                android:layout_above="@id/status_line"
+                android:text="@string/no_data"
+                android:textSize="20dip"
+                >
+    </TextView>
+
+</RelativeLayout> 
+ 
+<!--
+ 	</LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+  		android:layout_height="match_parent"
+		android:paddingLeft="8dp"
+		android:paddingRight="8dp"   >
+
+    	<TextView android:id="@+id/status_line"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/darkgray"
+              android:layout_alignParentBottom="true"
+              android:layout_centerHorizontal="true"
+              android:textColor="@color/actionbar_text"
+              android:text="this is now on top!!!" >
+    	</TextView>
+
+    	<ListView android:id="@id/android:list" 
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#0000FF"
+              android:layout_weight="1"
+              android:drawSelectorOnTop="false"  >
+    	</ListView>
+    	
+    	<TextView android:id="@+id/android:empty"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="FF0000"
+              android:text="No data" >
+    	</TextView>
+    	
+    </LinearLayout>
+-->

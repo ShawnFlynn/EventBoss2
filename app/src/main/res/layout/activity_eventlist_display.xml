@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:id="@+id/main_app_screen"
+	android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+	
+    <!--  List View
+	<RelativeLayout android:id="@+id/actionbar"
+      android:layout_alignParentTop="true"
+      android:layout_width="fill_parent" 
+      android:layout_height="wrap_content"
+      android:paddingLeft="6dip"
+      android:paddingRight="6dip"
+      android:paddingBottom="6dip"
+      android:paddingTop="10dip" 
+      android:layout_marginTop="2dip"
+      android:layout_marginBottom="2dip"
+      android:background="@color/darkblue"
+      android:layout_gravity="center_horizontal"
+      android:clickable="false" >
+	</RelativeLayout>	 -->
+
+    <TextView android:id="@+id/status_line"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/darkgray"
+              android:layout_alignParentTop="true"
+              android:layout_centerHorizontal="true"
+              android:textColor="@color/actionbar_text"
+              android:text="Status at the very top!!!">
+    </TextView>
+
+    <!--  List View -->
+    <ListView android:id="@+id/main_window_listview" 
+              android:layout_below="@id/status_line"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="#0000FF" >
+    </ListView>
+    
+    <!--  List View       -->
+    <TextView android:id="@+id/no_data"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:textColor="#cc0000"
+              android:background="@color/white"
+              android:layout_gravity="fill_vertical"
+              android:layout_below="@id/status_line"
+              android:text="@string/no_data"
+              android:textSize="20sp" >
+    </TextView>     -->
+
+</RelativeLayout> 

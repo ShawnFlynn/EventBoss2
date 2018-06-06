@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<string-array name="rss_src_names">
+		<item>http://www.bostoneventslist.com/rss.xml</item>
+		<item>http://www.nyeventslist.com/rss.xml</item>
+		<item>http://www.sfbayeventslist.com/rss.xml</item>
+	</string-array>
+
+	<string-array name="eventslists">
+		<item>Boston EventsList</item>
+		<item>New York EventsList</item>
+		<item>San Francisco EventsList</item>
+	</string-array>
+
+</resources>

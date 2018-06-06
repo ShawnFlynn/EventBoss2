@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <color name="mediumblue">#82a0df</color>
+        <color name="darkblue">#3366cc</color>
+        <color name="darkgray">#666666</color>
+        <color name="mediumgray">#999999</color>
+
+        <color name="pale_yellow">#AAAA00</color>
+        <color name="actionbar_text">#FFFFFF</color>
+        <color name="event_brief_body_text">#000000</color>
+        <color name="event_long_body_text">#FFFF66</color>    
+</resources> 
+
+

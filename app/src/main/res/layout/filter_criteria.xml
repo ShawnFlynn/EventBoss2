@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/criteria_name_view"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	
+	<!--  ACTIONBAR -->
+	<RelativeLayout android:id="@+id/find_banner"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:paddingLeft="6dip"
+		android:paddingRight="6dip"
+		android:paddingBottom="6dip"
+		android:paddingTop="10dip" 
+		android:layout_marginTop="2dip"
+		android:layout_marginBottom="2dip"
+		android:background="@color/darkblue"
+		android:layout_gravity="center_horizontal"
+		android:clickable="false" >
+		
+		<ImageView android:id="@+id/eventbossfind"
+		    android:contentDescription="Find Banner"
+			android:src="@drawable/eventboss"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerVertical="true"
+			android:clickable="false"
+			></ImageView>
+	</RelativeLayout>
+	<!--  List View -->
+	<!--  	android:cacheColorHint="#ffffffff" -->
+	
+	<!--  List View   this one required for list activity, maybe-->
+	<ListView android:id="@+id/list" 
+		android:layout_width="fill_parent"
+		android:textStyle="bold"
+		android:layout_height="match_parent"
+		android:cacheColorHint="#00000000">
+    </ListView>
+    
+    <!-- android:layout_width="wrap_content" -->
+	<TextView android:id="@id/android:empty"
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:background="#FF0000"
+               android:focusable="false"
+               android:text="No data">
+    </TextView>
+   <TextView android:id="@+id/key_line"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:focusable="false"
+              android:background="@color/darkgray">
+    </TextView>
+    
+</LinearLayout> 
+<!--  end activity view -->

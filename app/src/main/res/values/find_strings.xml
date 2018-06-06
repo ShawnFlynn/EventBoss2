@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="TITLE">Event Title</string>
+    <string name="URL">URL</string>
+    <string name="DESCRIPTION">Description</string>
+    <string name="STARTTIME">Start</string>
+    <string name="ENDTIME">End</string>
+    <string name="TYPE">Event Type</string>
+    <string name="LINK">Link</string>
+    <string name="LOCATION">Location</string>
+    <string name="DATE">Event Date</string>
+    <string name="app_name_criteria">EventBoss - Search Criteria</string>
+    <string name="menu_get_results">Get results</string>
+    <string name="intro_blurb_criteria">Enter Filter Criteria</string>
+    <string name="show_event_types">Show Available Event Types</string>
+
+</resources>

@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/action_delete"
+        android:icon="@drawable/ic_action_discard"
+        android:title="@string/titleDelete"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_calendar"
+        android:icon="@drawable/ic_action_event"
+        android:title="@string/titleCalendar"
+        android:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_share"
+        android:icon="@drawable/ic_action_share"
+        android:title="@string/titleShare"
+        android:showAsAction="ifRoom"
+        android:actionProviderClass="android.widget.ShareActionProvider" />
+
+    <item android:id="@+id/action_search"
+        android:title="@string/Search"
+        android:icon="@drawable/ic_action_search"
+        android:showAsAction="always" />
+
+    <item android:id="@+id/itemPrefs"
+        android:title="@string/titlePrefs"
+        android:icon="@drawable/ic_action_settings"
+        android:showAsAction="ifRoom" />
+
+</menu>

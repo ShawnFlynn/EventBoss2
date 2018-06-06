@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<array name="criteriakeys">
+		<item>"Title"</item>
+		<item>"Location"</item>
+		<item>"Date"</item>
+		<item>"Description"</item>
+		<item>"Type"</item>
+		<item>"Organizer</item>
+	</array>
+</resources>

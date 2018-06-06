@@ -1,0 +1,19 @@
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+       
+    <item android:id="@+id/idSaveSelected"
+        android:title="@string/titleSave"
+		android:icon="@drawable/ic_menu_preferences" />
+    	
+    <item android:id="@+id/idDeleteSelected"
+        android:title="@string/titleDelete"
+		android:icon="@drawable/ic_menu_preferences" />
+
+    <item android:id="@+id/itemPrefs"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/titlePrefs"  />
+            
+    <item android:id="@+id/idCalendar"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/titleCalendar"  />
+            
+   </menu>

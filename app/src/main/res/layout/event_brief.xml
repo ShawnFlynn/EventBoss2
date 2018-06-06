@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- extended display -->
+<!-- BostonEventsList web page format:
+	title 
+	time 	ending_time
+	eventtype
+		engineering, free events, ...
+	link to website
+		http://www......
+	location
+		......	
+	organizer 
+		......	
+	description
+		......	
+ -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	  android:id="@+id/listitem"
+  	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+  	  android:background="@color/white"
+	  android:textColor="@color/black"
+  	  android:paddingLeft="2sp">
+
+	<TextView android:id="@+id/name"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:padding="2dp"
+	  android:layout_centerHorizontal="true"
+      android:textSize="14sp"
+	  android:textColor="@color/darkblue"
+      android:paddingTop="6sp" />
+
+      <!-- android:onClick="@string/item_button_clicked" --> 
+
+
+	<RelativeLayout android:id="@+id/itemheader"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_below="@id/name"
+	   >
+
+	<TextView android:id="@+id/time"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/itemheader"
+	  android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="16sp"
+    />
+
+    <TextView android:id="@+id/endtime"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/itemheader"
+	  android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="170sp"
+    />
+
+<!--        android:layout_below="@id/time"  -->
+
+    <TextView android:id="@+id/eventtype"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/time" 
+      android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="16sp"
+      android:paddingBottom="4sp"
+    />
+
+	<TextView android:id="@+id/location"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/eventtype"
+	  android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="16sp"
+      android:paddingBottom="4sp"
+    />
+
+<!--  Not doing summary for now
+	<TextView android:id="@+id/summary" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_below="@id/itemheader"
+		android:textSize="12sp" android:paddingTop="4sp"
+		android:paddingBottom="6sp" android:maxLines="2" 
+    />
+ -->	
+ 
+    <TextView android:id="@+id/url"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/location"		
+      android:textSize="10sp"
+      android:paddingBottom="4sp"		
+      android:paddingLeft="16sp"
+      android:textStyle="bold"
+      android:focusable="false"
+      android:textColor="@color/event_brief_body_text"
+    />
+
+    <TextView android:id="@+id/organizer"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/url"
+	  android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="16sp"
+      android:paddingBottom="4sp"
+    />
+      
+    <TextView android:id="@+id/description"
+      android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+      android:layout_below="@id/organizer"
+	  android:textSize="10sp"
+      android:textColor="@color/event_brief_body_text"
+      android:paddingLeft="16sp"
+    />
+
+  </RelativeLayout>
+</RelativeLayout> 
+

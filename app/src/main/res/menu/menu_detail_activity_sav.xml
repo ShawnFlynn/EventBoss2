@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/idDeleteSelected"
+        android:title="@string/titleDelete"
+		android:icon="@drawable/ic_action_discard"
+		android:showAsAction="ifRoom"  />
+    
+    <item android:id="@+id/action_calendar" 
+        android:title="@string/titleCalendar" 
+        android:icon="@drawable/ic_action_event" 
+        android:showAsAction="ifRoom" />
+    
+    <item android:id="@+id/action_share" 
+        android:title="@string/titleShare" 
+        android:icon="@drawable/ic_action_share" 
+        android:showAsAction="ifRoom"
+        android:actionProviderClass="android.widget.ShareActionProvider" />
+</menu> 

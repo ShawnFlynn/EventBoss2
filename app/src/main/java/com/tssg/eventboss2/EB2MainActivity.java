@@ -86,6 +86,9 @@ public class EB2MainActivity extends FragmentActivity
 	// Controls strictMode - set to false for release
 	private static final boolean bDEVELOPER_MODE = false;
 
+	// Read RSS feed flag
+	private static volatile boolean readFeed = true;
+
 	// Action bar
 	private static ActionBar mActionBar;
 
@@ -168,8 +171,11 @@ public class EB2MainActivity extends FragmentActivity
 		tab0Label = tabString;
 	}
 
+	// Default feed ID = BOSTON
+	private static final int defaultFeedId = 0;		// Start with Boston
+
 	// Current feed ID
-	private static volatile int mFeedId = 0; // start with Boston
+	private static volatile int mFeedId = defaultFeedId;
 
 	// Get the current feed ID
 	public int getFeedId() {
@@ -259,7 +265,7 @@ public class EB2MainActivity extends FragmentActivity
 	// Size the eventsListCache and eventsListTime arrays
 	static {
 		// Set to number of feeds
-		eventsListCache.addAll(Collections.nCopies(mFeedListSize, Collections.<BELEvent>emptyList()));
+//		eventsListCache.addAll(Collections.nCopies(mFeedListSize, Collections.<BELEvent>emptyList()));
 
 		// Set the appropriate cache expiration time
 		if (DEBUG)
@@ -276,7 +282,7 @@ public class EB2MainActivity extends FragmentActivity
 										new CopyOnWriteArrayList<Date>(new Date[mFeedListSize]);
 
 	// Events List Cache size
-	private static int eventsListCacheSize = eventsListCache.size();
+	private static int eventsListCacheSize = eventsListTime.size();
 
 	// Get Events List Cache size
 	public int getEventsListCacheSize() {
@@ -450,10 +456,22 @@ public class EB2MainActivity extends FragmentActivity
 		if (extras != null) {
 			// problem: getInt returns 0 if key is absent, but 0 key is a valid feed #
 			int arg = extras.getInt("feedId", mFeedId);
-			if (DEBUG)
-				Log.d(TAG, "start up, change feedId from " + oldFeedId + " to " + arg);
-			oldFeedId = mFeedId;
-			setFeedId(arg);
+
+			// Check for a new feed read request
+			if (oldFeedId != arg) {		// New feed ID specified
+				if (DEBUG)
+					Log.d(TAG, "start up, change feedId from " + oldFeedId + " to " + arg);
+				oldFeedId = mFeedId;
+				setFeedId(arg);
+			} else {		// Same feed ID - Restart - set to default
+				oldFeedId = defaultFeedId;
+				setFeedId(defaultFeedId);
+				eventsListCache.clear();
+			}
+		} else {		// No feed ID specified - Start - set to default
+			oldFeedId = defaultFeedId;
+			setFeedId(defaultFeedId);
+			eventsListCache.clear();
 		}
 
 		// Generate the database file path
@@ -496,23 +514,16 @@ public class EB2MainActivity extends FragmentActivity
 										build());
 		}
 
-		// Get the specified feed data
+		// Check and set readFeed flag
 		if (savedInstanceState == null) {
-
-			if (DEBUG)
-				Log.d(TAG, "URL: " + mFeedURL);
-
-			// Instantiate the asyncTask passing the context
-			RSSFeedReader feedReader = new RSSFeedReader();
-
-			// Execute the asyncTask passing the desired feed URL
-			try {
-				feedReader.execute(new URL(mFeedURL));
-			} catch (MalformedURLException e) {
-				Log.e(TAG, "feedReader.execute() error");
-				e.printStackTrace();
-			}
+			// Set to read from RSS feed
+			readFeed = true;
+		} else {
+			readFeed = false;
 		}
+
+		if (DEBUG)
+			Log.d(TAG, "readFeed = " +readFeed);
 
 		// ********* This test is probably not right:
 		// Both versions (tablet and phone) will use 'event data'
@@ -600,6 +611,31 @@ public class EB2MainActivity extends FragmentActivity
 		super.onStart();
 
 		Log.i(TAG, "onStart()"); // Activity starts (after created)
+
+		// Initialize the EventsListCache
+		if (eventsListCache.size() == 0)
+			eventsListCache.addAll(Collections.nCopies(mFeedListSize, Collections.<BELEvent>emptyList()));
+
+		// Setup the RSS feed data arrays
+		SetupFeedDataArrays();
+
+		// Read from RSS feed if specified
+		if (readFeed) {
+
+			if (DEBUG)
+				Log.d(TAG, "URL: " + mFeedURL);
+
+			// Instantiate the asyncTask passing the context
+			RSSFeedReader feedReader = new RSSFeedReader();
+
+			// Execute the asyncTask passing the desired feed URL
+			try {
+				feedReader.execute(new URL(mFeedURL));
+			} catch (MalformedURLException e) {
+				Log.e(TAG, "feedReader.execute() error");
+				e.printStackTrace();
+			}
+		}
 
 	} // end --- onStart()
 

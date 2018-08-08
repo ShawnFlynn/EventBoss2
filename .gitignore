@@ -62,9 +62,6 @@ local.properties
 # this covers all directories named build
 build/
 
-# Want the apk so QA can download and test without building
-!*.apk
-
 # Android Studio captures folder
 captures/
 
